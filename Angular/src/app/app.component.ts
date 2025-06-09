@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Employee, Service } from './app.service';
 import { DxCardViewTypes } from 'devextreme-angular/card-view';
+import { Employee, Service } from './app.service';
 
 @Component({
   selector: 'app-root',
