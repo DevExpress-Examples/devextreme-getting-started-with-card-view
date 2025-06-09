@@ -1,3 +1,29 @@
-<div class="default-style">
-  <dx-button [text]="buttonText" (onClick)="onClick($event)"></dx-button>
-</div>
+<dx-card-view
+  [dataSource]="employees"
+  [width]="1000"
+  keyExpr="ID"
+  [allowColumnReordering]="true"
+  cardsPerRow="auto"
+  [cardMinWidth]="200"
+  [columnChooser]="getColumnChooserConfig()"
+>
+  <dxo-card-view-paging [pageSize]="3"></dxo-card-view-paging>
+  <dxo-card-view-pager
+    [showInfo]="true"
+    [showNavigationButtons]="true"
+    [showPageSizeSelector]="true"
+  ></dxo-card-view-pager>
+  <dxo-card-view-selection mode="multiple"></dxo-card-view-selection>
+  <dxo-card-view-header-filter [visible]="true"></dxo-card-view-header-filter>
+  <dxo-card-view-search-panel [visible]="true"></dxo-card-view-search-panel>
+  <dxi-card-view-column
+    dataField="FullName"
+    [allowHiding]="false"
+  ></dxi-card-view-column>
+  <dxi-card-view-column
+    dataField="Position"
+  ></dxi-card-view-column>
+  <dxi-card-view-column
+    dataField="Email"
+  ></dxi-card-view-column>
+</dx-card-view>
