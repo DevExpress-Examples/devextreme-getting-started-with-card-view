@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ClickEvent } from 'devextreme/ui/button';
 import { Employee, Service } from './app.service';
+import { DxCardViewTypes } from 'devextreme-angular/card-view';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +10,14 @@ import { Employee, Service } from './app.service';
 })
 export class AppComponent {
   title = 'Angular';
+
   employees: Employee[];
+
   constructor(service: Service) {
     this.employees = service.getEmployees();
   }
-  getColumnChooserConfig() {
+
+  getColumnChooserConfig(): DxCardViewTypes.ColumnChooser {
     return {
       enabled: true,
       height: 340,
@@ -22,11 +25,11 @@ export class AppComponent {
       position: {
         my: 'right top',
         at: 'right bottom',
-        of: '.dx-cardview-column-chooser-button'
+        of: '.dx-cardview-column-chooser-button',
       },
       selection: {
-        selectByClick: true
-      }
+        selectByClick: true,
+      },
     };
   }
 }
