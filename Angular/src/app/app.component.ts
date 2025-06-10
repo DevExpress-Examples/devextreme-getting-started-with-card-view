@@ -16,20 +16,4 @@ export class AppComponent {
   constructor(service: Service) {
     this.employees = service.getEmployees();
   }
-
-  getColumnChooserConfig(): DxCardViewTypes.ColumnChooser {
-    return {
-      enabled: true,
-      height: 340,
-      mode: 'select',
-      position: {
-        my: 'right top',
-        at: 'right bottom',
-        of: '.dx-cardview-column-chooser-button',
-      },
-      selection: {
-        selectByClick: true,
-      },
-    };
-  }
 }

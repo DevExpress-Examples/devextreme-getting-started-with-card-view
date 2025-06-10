@@ -5,7 +5,6 @@
   [allowColumnReordering]="true"
   cardsPerRow="auto"
   [cardMinWidth]="200"
-  [columnChooser]="getColumnChooserConfig()"
 >
   <dxo-card-view-paging [pageSize]="3"></dxo-card-view-paging>
   <dxo-card-view-pager
@@ -16,6 +15,16 @@
   <dxo-card-view-selection mode="multiple"></dxo-card-view-selection>
   <dxo-card-view-header-filter [visible]="true"></dxo-card-view-header-filter>
   <dxo-card-view-search-panel [visible]="true"></dxo-card-view-search-panel>
+  <dxo-card-view-column-chooser [enabled]="true" [height]="340" mode="select">
+    <dxo-card-view-column-chooser-selection
+      [selectByClick]="true"
+    ></dxo-card-view-column-chooser-selection>
+    <dxo-card-view-column-chooser-position
+      my="right top"
+      at="right bottom"
+      of=".dx-cardview-column-chooser-button"
+    ></dxo-card-view-column-chooser-position>
+  </dxo-card-view-column-chooser>
   <dxi-card-view-column
     dataField="FullName"
     [allowHiding]="false"
