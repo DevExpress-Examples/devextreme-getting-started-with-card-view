@@ -1,17 +1,47 @@
-import { useCallback, useState } from 'react';
 import './App.css';
 import 'devextreme/dist/css/dx.material.blue.light.compact.css';
-import Button from 'devextreme-react/button';
+import CardView, { 
+  Column, Paging, Pager, Selection, HeaderFilter, SearchPanel, ColumnChooser, Position 
+} from 'devextreme-react/card-view';
+import { employees } from './data.ts';
 
 function App(): JSX.Element {
-  var [count, setCount] = useState<number>(0);
-  const clickHandler = useCallback(() => {
-    setCount((prev) => prev + 1);
-  }, [setCount]);
   return (
-    <div className="main">
-      <Button text={`Click count: ${count}`} onClick={clickHandler} />
-    </div>
+    <CardView
+      dataSource={employees}
+      width={1000}
+      keyExpr="ID"
+      allowColumnReordering={true}
+      cardsPerRow="auto"
+      cardMinWidth={200}
+    >
+      <Paging
+        pageSize={3}
+      />
+      <Pager
+        showInfo={true}
+        showNavigationButtons={true}
+        showPageSizeSelector={true}
+      />
+      <Selection mode="multiple" />
+      <HeaderFilter visible={true} />
+      <SearchPanel visible={true} />
+      <ColumnChooser
+        enabled={true}
+        height={340}
+        mode="select"
+      >
+        <Position
+          my="right top"
+          at="right bottom"
+          of=".dx-cardview-column-chooser-button"
+        />
+        <Selection selectByClick={true} />
+      </ColumnChooser>
+      <Column dataField="FullName" allowHiding={false} />
+      <Column dataField="Position" />
+      <Column dataField="Email" />
+    </CardView>
   );
 }
 
