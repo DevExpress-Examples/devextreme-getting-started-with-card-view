@@ -1,9 +1,16 @@
 import './App.css';
 import 'devextreme/dist/css/dx.material.blue.light.compact.css';
-import CardView, { 
-  Column, Paging, Pager, Selection, HeaderFilter, SearchPanel, ColumnChooser, Position 
+import CardView, {
+  Column,
+  ColumnChooser,
+  HeaderFilter,
+  Pager,
+  Paging,
+  Position,
+  SearchPanel,
+  Selection,
 } from 'devextreme-react/card-view';
-import { employees } from './data.ts';
+import { employees } from './data';
 
 function App(): JSX.Element {
   return (
