@@ -3,10 +3,11 @@ import { DxCardViewTypes } from 'devextreme-angular/ui/card-view';
 import { Employee, Service } from './app.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  providers: [Service],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    providers: [Service],
+    standalone: false
 })
 export class AppComponent {
   title = 'Angular';
