@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Employee, Service } from './app.service';
 
 import { DxCardViewModule } from 'devextreme-angular/ui/card-view';
@@ -8,6 +8,7 @@ import { DxCardViewModule } from 'devextreme-angular/ui/card-view';
     imports: [DxCardViewModule],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     providers: [Service],
 })
 export class AppComponent {
